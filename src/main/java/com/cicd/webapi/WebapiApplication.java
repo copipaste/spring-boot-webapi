@@ -22,3 +22,11 @@ class HelloController {
 		return "Hello World";
 	}
 }
+
+@RestController
+class HealthController {
+	@GetMapping("/health")
+	public String health() {
+		return "Server Health OK";
+	}
+}
