@@ -30,4 +30,13 @@ class WebapiApplicationTests {
 				.andExpect(content().string("Server Health OK"));
 	}
 
+	@Test
+	void checkDateResponse() throws Exception {
+		mockMvc.perform(get("/date")
+				.accept(MediaType.TEXT_PLAIN))
+				.andExpect(status().isOk())
+				//.andExpect(content().string("Current server Date " + java.time.LocalDate.now()));
+				.andExpect(content().string("current Server date:" + java.time.LocalDateTime.now()));
+
+	}
 }
