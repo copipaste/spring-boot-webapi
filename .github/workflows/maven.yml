@@ -41,9 +41,9 @@ jobs:
       #run: ./mvnw --batch-mode test
       run: mvn -B test --file pom.xml
 
-    #- name: Run Code Coverage with Maven
+    - name: Run Code Coverage with Maven
       #run: ./mvnw --batch-mode test
-      #run: mvn -B test jacoco:report --file pom.xml
+      run: mvn -B test jacoco:report --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
