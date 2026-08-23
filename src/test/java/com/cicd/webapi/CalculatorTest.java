@@ -42,6 +42,20 @@ public class CalculatorTest {
             );
 
         assert exception.getMessage().equals("Denominator cannot be zero");
-        
+    }
+
+    @Test
+    void testFactorial() {
+        Calculator calculator = new Calculator();
+        assert calculator.factorial(5) == 120;
+        assert calculator.factorial(0) == 1;
+        assert calculator.factorial(1) == 1;
+
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> calculator.factorial(-1)
+        );
+
+        assert exception.getMessage().equals("Negative numbers are not allowed");
     }
 }
