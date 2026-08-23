@@ -25,7 +25,7 @@ class WebapiApplicationTests {
 	@Test
 	void checkHealthyResponse() throws Exception {
 		mockMvc.perform(get("/health")
-				.accept(MediaType.TEXT_PLAIN))
+				.accept(MediaType.TEXT_PLAIN)) 
 				.andExpect(status().isOk())
 				.andExpect(content().string("Server Health OK"));
 	}
@@ -35,8 +35,8 @@ class WebapiApplicationTests {
 		mockMvc.perform(get("/date")
 				.accept(MediaType.TEXT_PLAIN))
 				.andExpect(status().isOk())
-				//.andExpect(content().string("Current server Date " + java.time.LocalDate.now()));
-				.andExpect(content().string("current Server date:" + java.time.LocalDateTime.now()));
+				.andExpect(content().string("Current server Date " + java.time.LocalDate.now()));
+				//.andExpect(content().string("current Server date:" + java.time.LocalDateTime.now()));
 
 	}
 }
