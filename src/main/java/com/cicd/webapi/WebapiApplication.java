@@ -17,24 +17,24 @@ public class WebapiApplication {
 
 @RestController
 class HelloController {
-	@GetMapping("/")
-	public String hello() {
-		return "Hello World";
-	}
+    @GetMapping("/")
+    public String hello() {
+        return "Hello CI/CD World!";
+    }
 }
 
 @RestController
 class HealthController {
-	@GetMapping("/health")
-	public String health() {
-		return "Server Health OK";
-	}
+    @GetMapping("/health")
+    public String health() {
+        return "Server Healthy!";
+    }
 }
 
 @RestController
 class DateController {
-	@GetMapping("/date")
-	public String date() {
-		return "Current server Date " + java.time.LocalDate.now();
-	}
+    @GetMapping("/date")
+    public String date() {
+        return "Current Server Date: " + java.time.LocalDate.now();
+    }
 }
